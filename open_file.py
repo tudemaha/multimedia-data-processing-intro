@@ -9,7 +9,7 @@ def read_excel(filename, start, end):
     data = data.set_index('No')
     
     # return the selected range of dataset dataframe
-    return data.iloc[[i for i in range(start - 1, end)]]
+    return data.iloc[start-1:end]
 
 # function to read own dictionary to remove alay words
 def read_dictionary(filename):
