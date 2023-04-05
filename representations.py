@@ -92,13 +92,13 @@ def tfidf(dataset_dict):
     # create dataframe from zero TF-IDF matrix
     tfidf_df = pd.DataFrame(tfidf_matrix, index=[key for key in dataset_dict], columns=words)
     # iterate every column (words) in tfidf_df
-    for column in tfidf_df:
+    for word in tfidf_df:
         # iterate the key from dataset dictionary
         for idx in dataset_dict:
-            # if the value in bow_df[column][idx] not 0
-            if bow_df[column][idx] != 0:
+            # if the value in bow_df[word][idx] not 0
+            if bow_df[word][idx] != 0:
                 # update the tfidf_df in current cell with TF-IDF value 
-                tfidf_df[column][idx] = (1 + log10(bow_df[column][idx])) * log10(len(dataset_dict) / dft[column])
+                tfidf_df[word][idx] = (1 + log10(bow_df[word][idx])) * log10(len(dataset_dict) / dft[word])
 
     # return the TF-IDF dataframe
     return tfidf_df
