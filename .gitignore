@@ -220,3 +220,6 @@ pyrightconfig.json
 .ionide
 
 # End of https://www.toptal.com/developers/gitignore/api/visualstudiocode,python,pythonvanilla
+
+# Ignore the datasets
+/image-preprocessing/datasets
